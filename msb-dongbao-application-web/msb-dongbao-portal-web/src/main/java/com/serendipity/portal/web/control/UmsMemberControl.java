@@ -58,4 +58,10 @@ public class UmsMemberControl {
     public String verifyToken(String token) {
         return JwtUtil.parseToken(token);
     }
+
+
+    @GetMapping("/remove")
+    public ResultWrapper remove(Integer id) {
+        return umsMemberService.remove(id);
+    }
 }

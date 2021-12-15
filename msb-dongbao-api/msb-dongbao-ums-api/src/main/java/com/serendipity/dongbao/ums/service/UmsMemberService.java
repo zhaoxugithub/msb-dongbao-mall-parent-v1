@@ -21,4 +21,6 @@ public interface UmsMemberService {
     ResultWrapper login(UmsMemberLoginParamDTO umsMemberLoginParamDTO);
 
     ResultWrapper edit(UmsMember umsMember);
+
+    ResultWrapper remove(Integer id);
 }

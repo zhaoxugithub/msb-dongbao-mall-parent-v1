@@ -71,4 +71,19 @@ public class UmsMemberServiceImpl implements UmsMemberService {
         umsMemberMapper.updateById(umsMember);
         return ResultWrapper.getSuccessBuilder().build();
     }
+
+    @Override
+    public ResultWrapper remove(Integer id) {
+        if (id == null) {
+            return ResultWrapper.getFailBuilder().msg("用户id为空").build();
+        }
+        UmsMember umsMember = umsMemberMapper.selectById(id);
+        if (umsMember != null) {
+            umsMemberMapper.deleteById(umsMember.getId());
+            return ResultWrapper.getSuccessBuilder().msg("用户删除成功").build();
+        }
+        return ResultWrapper.getFailBuilder().msg("用户删除失败").build();
+    }
+
+
 }
