@@ -13,6 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * <p>
  * 后台用户表 服务实现类
@@ -85,5 +87,9 @@ public class UmsMemberServiceImpl implements UmsMemberService {
         return ResultWrapper.getFailBuilder().msg("用户删除失败").build();
     }
 
-
+    @Override
+    public ResultWrapper getAllUser() {
+        List<UmsMember> umsMembers = umsMemberMapper.selectAllUser();
+        return ResultWrapper.getSuccessBuilder().msg("查询成功").data(umsMembers).build();
+    }
 }

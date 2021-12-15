@@ -23,4 +23,6 @@ public interface UmsMemberService {
     ResultWrapper edit(UmsMember umsMember);
 
     ResultWrapper remove(Integer id);
+
+    ResultWrapper getAllUser();
 }

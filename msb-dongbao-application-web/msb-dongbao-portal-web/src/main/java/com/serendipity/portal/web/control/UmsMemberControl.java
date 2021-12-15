@@ -64,4 +64,10 @@ public class UmsMemberControl {
     public ResultWrapper remove(Integer id) {
         return umsMemberService.remove(id);
     }
+
+
+    @GetMapping("/getAllUser")
+    public ResultWrapper getAllUser() {
+        return umsMemberService.getAllUser();
+    }
 }

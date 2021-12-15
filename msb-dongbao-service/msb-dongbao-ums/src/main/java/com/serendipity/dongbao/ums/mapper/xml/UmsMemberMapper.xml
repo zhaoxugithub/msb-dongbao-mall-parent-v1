@@ -6,4 +6,8 @@
         from ums_member
         where username = #{name}
     </select>
+    <select id="selectAllUser" resultType="com.serendipity.dongbao.ums.entity.UmsMember">
+        select *
+        from ums_member;
+    </select>
 </mapper>
